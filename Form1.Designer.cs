@@ -1,4 +1,4 @@
-﻿namespace DelayedStart {
+﻿namespace SG.DelayedStart {
     partial class Form1 {
         /// <summary>
         /// Required designer variable.
