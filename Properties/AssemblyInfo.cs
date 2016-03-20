@@ -6,11 +6,11 @@ using System.Runtime.InteropServices;
 // set of attributes. Change these attribute values to modify the information
 // associated with an assembly.
 [assembly: AssemblyTitle("DelayedStart")]
-[assembly: AssemblyDescription("")]
+[assembly: AssemblyDescription("Wrapper application delayed starting applications")]
 [assembly: AssemblyConfiguration("")]
-[assembly: AssemblyCompany("")]
+[assembly: AssemblyCompany("SGrottel")]
 [assembly: AssemblyProduct("DelayedStart")]
-[assembly: AssemblyCopyright("Copyright ©  2016")]
+[assembly: AssemblyCopyright("Copyright © 2016 by SGrottel")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 

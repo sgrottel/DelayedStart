@@ -5,7 +5,12 @@ using System.Threading.Tasks;
 using System.Windows.Forms;
 
 namespace SG.DelayedStart {
+
+    /// <summary>
+    /// Application main class
+    /// </summary>
     static class Program {
+
         /// <summary>
         /// The main entry point for the application.
         /// </summary>
@@ -15,5 +20,7 @@ namespace SG.DelayedStart {
             Application.SetCompatibleTextRenderingDefault(false);
             Application.Run(new Form1());
         }
+
     }
+
 }
