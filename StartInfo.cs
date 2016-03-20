@@ -12,6 +12,7 @@ namespace SG.DelayedStart {
     /// <summary>
     /// Start info for the application to delayed-start
     /// </summary>
+    [XmlRoot("DelayedStartInfo")]
     public class StartInfo {
 
         /// <summary>
@@ -32,6 +33,7 @@ namespace SG.DelayedStart {
         /// <summary>
         /// The application start delay
         /// </summary>
+        [XmlElement(Type = typeof(SG.Utilities.XmlTimeSpan))]
         public TimeSpan Delay { get; set; }
 
         /// <summary>

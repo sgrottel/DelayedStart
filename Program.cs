@@ -18,7 +18,16 @@ namespace SG.DelayedStart {
         static void Main() {
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new Form1());
+
+            //StartInfo si = new StartInfo();
+            //si.Application = "Notepad.exe";
+            //si.WorkingDirectory = "Here";
+            //si.Arguments = "Test";
+            //si.Delay = TimeSpan.FromSeconds(10);
+
+            //si.Save("D:\\tmp\\test.dssi", true);
+
+            //Application.Run(new Form1());
         }
 
     }
