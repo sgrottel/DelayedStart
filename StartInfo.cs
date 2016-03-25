@@ -17,6 +17,16 @@ namespace SG.DelayedStart {
     public class StartInfo {
 
         /// <summary>
+        /// File format extension string without leading period
+        /// </summary>
+        public const string FileFormatExt = "dsi";
+
+        /// <summary>
+        /// File format filter string used for file dialogs
+        /// </summary>
+        public const string FileFormatFilter = "Delayed Start Info Files|*." + FileFormatExt;
+
+        /// <summary>
         /// Path to the application executable
         /// </summary>
         public string Application { get; set; }
@@ -90,7 +100,19 @@ namespace SG.DelayedStart {
         /// <param name="throwOnError">If true, exceptions are thrown on errors</param>
         /// <returns>Null on error, the started process object on success</returns>
         public Process Start(bool throwOnError) {
-            throw new NotImplementedException();
+            if (!throwOnError) {
+                try {
+                    return Start(true);
+                } catch { }
+                return null;
+            }
+
+            ProcessStartInfo psi = new ProcessStartInfo();
+            psi.FileName = Application;
+            psi.WorkingDirectory = WorkingDirectory;
+            psi.Arguments = Arguments;
+
+            return Process.Start(psi);
         }
 
     }
