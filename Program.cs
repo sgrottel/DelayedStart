@@ -27,7 +27,20 @@ namespace SG.DelayedStart {
 
             //si.Save("D:\\tmp\\test.dssi", true);
 
-            //Application.Run(new Form1());
+            RunForm f = new RunForm();
+            f.StartInfo = StartInfo.Load("D:\\tmp\\test.dssi", true);
+            f.Show();
+
+            Application.Run();
+        }
+
+        /// <summary>
+        /// Closes the application when the last form closed
+        /// </summary>
+        /// <param name="sender">not used</param>
+        /// <param name="e">not used</param>
+        static internal void LastFormClosed(object sender, FormClosedEventArgs e) {
+            Application.ExitThread();
         }
 
     }

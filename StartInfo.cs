@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Diagnostics;
 using System.IO;
 using System.Linq;
 using System.Text;
@@ -81,6 +82,15 @@ namespace SG.DelayedStart {
                 ser.Serialize(writer, this);
             }
             return true;
+        }
+
+        /// <summary>
+        /// Starts the described process
+        /// </summary>
+        /// <param name="throwOnError">If true, exceptions are thrown on errors</param>
+        /// <returns>Null on error, the started process object on success</returns>
+        public Process Start(bool throwOnError) {
+            throw new NotImplementedException();
         }
 
     }
