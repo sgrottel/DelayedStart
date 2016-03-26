@@ -128,6 +128,41 @@ namespace SG.DelayedStart {
             label9.Text = AssemblyTitle + " (Ver. " + AssemblyVersion + ") " + AssemblyCopyright;
             label9.Left = linkLabel1.Left - label9.Width;
 
+            if ((SG.Utilities.Forms.Elevation.IsElevationRequired) && (!SG.Utilities.Forms.Elevation.IsElevated)) {
+                // Icons
+                Icon i = null;
+                string path = System.IO.Path.Combine(Environment.SystemDirectory, "UserAccountControlSettings.exe");
+                if (System.IO.File.Exists(path)) {
+                    i = IconUtility.LoadIcon(path, toolStrip1.ImageScalingSize, true);
+                }
+                if (i == null) {
+                    path = System.IO.Path.Combine(Environment.SystemDirectory, "SmartScreenSettings.exe");
+                    if (System.IO.File.Exists(path)) {
+                        i = IconUtility.LoadIcon(path, toolStrip1.ImageScalingSize, true);
+                    }
+                }
+                if (i == null) {
+                    path = System.IO.Path.Combine(Environment.SystemDirectory, "UserAccountControlSettings.exe");
+                    if (System.IO.File.Exists(path)) {
+                        i = IconUtility.LoadIcon(path, toolStrip1.ImageScalingSize, false);
+                    }
+                }
+                if (i == null) {
+                    path = System.IO.Path.Combine(Environment.SystemDirectory, "SmartScreenSettings.exe");
+                    if (System.IO.File.Exists(path)) {
+                        i = IconUtility.LoadIcon(path, toolStrip1.ImageScalingSize, false);
+                    }
+                }
+                if (i != null) {
+                    if (i.Size != toolStrip1.ImageScalingSize) {
+                        i = new Icon(i, toolStrip1.ImageScalingSize);
+                    }
+                    Bitmap b = i.ToBitmap();
+                    registerFileTypesToolStripMenuItem.Image = b;
+                    unregisterFileTypesToolStripMenuItem.Image = b;
+                }
+            }
+
             toolStripButton1_Click(null, null);
         }
 
@@ -286,6 +321,35 @@ namespace SG.DelayedStart {
             textBox4_TextChanged(null, e);
         }
 
+        private void registerFileTypesToolStripMenuItem_Click(object sender, EventArgs e) {
+            if ((SG.Utilities.Forms.Elevation.IsElevationRequired) && (!SG.Utilities.Forms.Elevation.IsElevated)) {
+                SG.Utilities.Forms.Elevation.RestartElevated("-RegFileTypes ownerHWnd=" + this.Handle.ToString());
+            } else {
+                try {
+                    Program.registerFileTypes();
+                    MessageBox.Show("File type *." + StartInfo.FileFormatExt + " registered.",
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } catch (Exception ex) {
+                    MessageBox.Show("Failed to register *." + StartInfo.FileFormatExt + " file type:\n" + ex.ToString(),
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
+
+        private void unregisterFileTypesToolStripMenuItem_Click(object sender, EventArgs e) {
+            if ((SG.Utilities.Forms.Elevation.IsElevationRequired) && (!SG.Utilities.Forms.Elevation.IsElevated)) {
+                SG.Utilities.Forms.Elevation.RestartElevated("-UnregFileTypes ownerHWnd=" + this.Handle.ToString());
+            } else {
+                try {
+                    Program.unregisterFileTypes();
+                    MessageBox.Show("File type *." + StartInfo.FileFormatExt + " unregistered.",
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Information);
+                } catch (Exception ex) {
+                    MessageBox.Show("Failed to unregister *." + StartInfo.FileFormatExt + " file type:\n" + ex.ToString(),
+                        Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
+        }
     }
 
 }

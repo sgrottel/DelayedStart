@@ -35,6 +35,7 @@
             this.startDelayedToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.startNowToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStripSeparator3 = new System.Windows.Forms.ToolStripSeparator();
+            this.toolStripDropDownButton1 = new System.Windows.Forms.ToolStripDropDownButton();
             this.label1 = new System.Windows.Forms.Label();
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.button1 = new System.Windows.Forms.Button();
@@ -58,6 +59,8 @@
             this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
             this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
             this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
+            this.registerFileTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.unregisterFileTypesToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -71,7 +74,8 @@
             this.toolStripButton3,
             this.toolStripSeparator2,
             this.toolStripButton4,
-            this.toolStripSeparator3});
+            this.toolStripSeparator3,
+            this.toolStripDropDownButton1});
             this.toolStrip1.Location = new System.Drawing.Point(0, 0);
             this.toolStrip1.Name = "toolStrip1";
             this.toolStrip1.Size = new System.Drawing.Size(584, 25);
@@ -117,14 +121,14 @@
             // 
             this.saveToolStripMenuItem.Image = global::SG.DelayedStart.Properties.Resources.Save_6530;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.saveToolStripMenuItem.Text = "Save";
             this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.saveAsToolStripMenuItem.Text = "Save as ...";
             this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
@@ -149,14 +153,14 @@
             // 
             this.startDelayedToolStripMenuItem.Image = global::SG.DelayedStart.Properties.Resources.start;
             this.startDelayedToolStripMenuItem.Name = "startDelayedToolStripMenuItem";
-            this.startDelayedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startDelayedToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.startDelayedToolStripMenuItem.Text = "Start Delayed";
             this.startDelayedToolStripMenuItem.Click += new System.EventHandler(this.startDelayedToolStripMenuItem_Click);
             // 
             // startNowToolStripMenuItem
             // 
             this.startNowToolStripMenuItem.Name = "startNowToolStripMenuItem";
-            this.startNowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startNowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.startNowToolStripMenuItem.Text = "Start Now";
             this.startNowToolStripMenuItem.Click += new System.EventHandler(this.startNowToolStripMenuItem_Click);
             // 
@@ -164,6 +168,17 @@
             // 
             this.toolStripSeparator3.Name = "toolStripSeparator3";
             this.toolStripSeparator3.Size = new System.Drawing.Size(6, 25);
+            // 
+            // toolStripDropDownButton1
+            // 
+            this.toolStripDropDownButton1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.registerFileTypesToolStripMenuItem,
+            this.unregisterFileTypesToolStripMenuItem});
+            this.toolStripDropDownButton1.Image = global::SG.DelayedStart.Properties.Resources.gear_16xLG;
+            this.toolStripDropDownButton1.ImageTransparentColor = System.Drawing.Color.Magenta;
+            this.toolStripDropDownButton1.Name = "toolStripDropDownButton1";
+            this.toolStripDropDownButton1.Size = new System.Drawing.Size(78, 22);
+            this.toolStripDropDownButton1.Text = "Settings";
             // 
             // label1
             // 
@@ -371,6 +386,20 @@
             // 
             this.folderBrowserDialog1.Description = "Select Working Directory...";
             // 
+            // registerFileTypesToolStripMenuItem
+            // 
+            this.registerFileTypesToolStripMenuItem.Name = "registerFileTypesToolStripMenuItem";
+            this.registerFileTypesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.registerFileTypesToolStripMenuItem.Text = "Register File Types";
+            this.registerFileTypesToolStripMenuItem.Click += new System.EventHandler(this.registerFileTypesToolStripMenuItem_Click);
+            // 
+            // unregisterFileTypesToolStripMenuItem
+            // 
+            this.unregisterFileTypesToolStripMenuItem.Name = "unregisterFileTypesToolStripMenuItem";
+            this.unregisterFileTypesToolStripMenuItem.Size = new System.Drawing.Size(182, 22);
+            this.unregisterFileTypesToolStripMenuItem.Text = "Unregister File Types";
+            this.unregisterFileTypesToolStripMenuItem.Click += new System.EventHandler(this.unregisterFileTypesToolStripMenuItem_Click);
+            // 
             // EditForm
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -442,6 +471,9 @@
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
         private System.Windows.Forms.OpenFileDialog openFileDialog2;
         private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
+        private System.Windows.Forms.ToolStripDropDownButton toolStripDropDownButton1;
+        private System.Windows.Forms.ToolStripMenuItem registerFileTypesToolStripMenuItem;
+        private System.Windows.Forms.ToolStripMenuItem unregisterFileTypesToolStripMenuItem;
     }
 }
 

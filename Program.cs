@@ -110,7 +110,7 @@ namespace SG.DelayedStart {
         /// <summary>
         /// Adds the file type information to the registry
         /// </summary>
-        static void registerFileTypes() {
+        static internal void registerFileTypes() {
             RegistryKey ext_dsi = Registry.ClassesRoot.CreateSubKey("." + StartInfo.FileFormatExt);
             ext_dsi.SetValue(null, "DelayedStart.StartInfo");
             ext_dsi.Close();
@@ -119,7 +119,7 @@ namespace SG.DelayedStart {
             desc_dsi.SetValue(null, "DelayedStart Start Info File");
 
             RegistryKey icon_desc_dsi = desc_dsi.CreateSubKey("DefaultIcon");
-            icon_desc_dsi.SetValue(null, "\"" + Application.ExecutablePath + "\",-2");
+            icon_desc_dsi.SetValue(null, "\"" + Application.ExecutablePath + "\",0");
             icon_desc_dsi.Close();
 
             RegistryKey shell_desc_dsi = desc_dsi.CreateSubKey("shell");
@@ -142,7 +142,7 @@ namespace SG.DelayedStart {
         /// <summary>
         /// Removes the file type information from the registry
         /// </summary>
-        static void unregisterFileTypes() {
+        static internal void unregisterFileTypes() {
             Registry.ClassesRoot.DeleteSubKeyTree("." + StartInfo.FileFormatExt, false);
             Registry.ClassesRoot.DeleteSubKeyTree("DelayedStart.StartInfo", false);
         }
