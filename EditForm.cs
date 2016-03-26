@@ -56,7 +56,43 @@ namespace SG.DelayedStart {
         /// <summary>
         /// Gets or sets the start info object
         /// </summary>
-        public StartInfo StartInfo { get; set; }
+        public StartInfo StartInfo {
+            get {
+                return null;
+            }
+            set {
+                if (value == null) {
+                    toolStripButton1_Click(null, null);
+                    return;
+                }
+                textBox1.Text = value.Application;
+                textBox2.Text = value.WorkingDirectory;
+                radioButton1.Checked = string.IsNullOrWhiteSpace(value.WorkingDirectory);
+                textBox3.Text = value.Arguments;
+                int ts = (int)value.Delay.TotalSeconds;
+                if (ts < 0) ts = 0;
+                if (ts >= 60 * 60) {
+                    int h = ts / 60 * 60;
+                    ts -= h * 60 * 60;
+                    textBox4.Text = h.ToString();
+                } else {
+                    textBox4.Text = "";
+                }
+                if (ts >= 60) {
+                    int m = ts / 60;
+                    ts -= m * 60;
+                    textBox5.Text = m.ToString();
+                } else {
+                    textBox5.Text = "";
+                }
+                textBox6.Text = ts.ToString();
+            }
+        }
+
+        /// <summary>
+        /// Gets or sets the start info file name
+        /// </summary>
+        public string Filename { get; set; }
 
         /// <summary>
         /// Ctor
@@ -80,10 +116,15 @@ namespace SG.DelayedStart {
             textBox5.Text = "";
             textBox6.Text = "";
             radioButton1.Checked = true;
+            Filename = ""; // < Not sure about that, but seem legit
         }
 
         private void linkLabel1_LinkClicked(object sender, LinkLabelLinkClickedEventArgs e) {
             SG.Utilities.OS.UrlUtility.OpenUrl("http://" + linkLabel1.Text);
+        }
+
+        private void textBox2_TextChanged(object sender, EventArgs e) {
+            radioButton2.Checked = true;
         }
     }
 

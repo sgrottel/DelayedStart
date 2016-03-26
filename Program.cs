@@ -23,6 +23,7 @@ namespace SG.DelayedStart {
 
             bool doEdit = false;
             StartInfo info = null;
+            string infoFile = string.Empty;
 
             if ((args != null) && (args.Length > 0)) {
                 bool regFileTypes = false;
@@ -46,6 +47,7 @@ namespace SG.DelayedStart {
                     } else if (info == null) {
                         try {
                             info = StartInfo.Load(arg, true);
+                            infoFile = arg;
                         } catch(Exception ex) {
                             MessageBox.Show("Failed to load " + arg + ": " + ex.ToString(),
                                 Application.ProductName, MessageBoxButtons.OK, MessageBoxIcon.Error);
@@ -86,6 +88,7 @@ namespace SG.DelayedStart {
             } else {
                 EditForm f = new EditForm();
                 f.StartInfo = info;
+                f.Filename = infoFile;
                 f.Show();
             }
 

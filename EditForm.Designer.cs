@@ -111,13 +111,13 @@
             // 
             this.saveToolStripMenuItem.Image = global::SG.DelayedStart.Properties.Resources.Save_6530;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.saveToolStripMenuItem.Text = "Save";
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
             this.saveAsToolStripMenuItem.Text = "Save as ...";
             // 
             // toolStripSeparator2
@@ -140,13 +140,13 @@
             // 
             this.startDelayedToolStripMenuItem.Image = global::SG.DelayedStart.Properties.Resources.start;
             this.startDelayedToolStripMenuItem.Name = "startDelayedToolStripMenuItem";
-            this.startDelayedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startDelayedToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.startDelayedToolStripMenuItem.Text = "Start Delayed";
             // 
             // startNowToolStripMenuItem
             // 
             this.startNowToolStripMenuItem.Name = "startNowToolStripMenuItem";
-            this.startNowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
+            this.startNowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
             this.startNowToolStripMenuItem.Text = "Start Now";
             // 
             // toolStripSeparator3
@@ -167,6 +167,8 @@
             // 
             this.textBox1.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox1.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox1.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystem;
             this.textBox1.Location = new System.Drawing.Point(107, 30);
             this.textBox1.Name = "textBox1";
             this.textBox1.Size = new System.Drawing.Size(434, 20);
@@ -226,10 +228,13 @@
             // 
             this.textBox2.Anchor = ((System.Windows.Forms.AnchorStyles)(((System.Windows.Forms.AnchorStyles.Top | System.Windows.Forms.AnchorStyles.Left) 
             | System.Windows.Forms.AnchorStyles.Right)));
+            this.textBox2.AutoCompleteMode = System.Windows.Forms.AutoCompleteMode.SuggestAppend;
+            this.textBox2.AutoCompleteSource = System.Windows.Forms.AutoCompleteSource.FileSystemDirectories;
             this.textBox2.Location = new System.Drawing.Point(127, 79);
             this.textBox2.Name = "textBox2";
             this.textBox2.Size = new System.Drawing.Size(414, 20);
             this.textBox2.TabIndex = 7;
+            this.textBox2.TextChanged += new System.EventHandler(this.textBox2_TextChanged);
             // 
             // textBox3
             // 
@@ -255,6 +260,7 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(50, 20);
             this.textBox4.TabIndex = 11;
+            this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label4
             // 
@@ -289,6 +295,7 @@
             this.textBox5.Name = "textBox5";
             this.textBox5.Size = new System.Drawing.Size(50, 20);
             this.textBox5.TabIndex = 14;
+            this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label7
             // 
@@ -305,6 +312,7 @@
             this.textBox6.Name = "textBox6";
             this.textBox6.Size = new System.Drawing.Size(50, 20);
             this.textBox6.TabIndex = 16;
+            this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
             // 
             // label9
             // 
