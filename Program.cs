@@ -84,6 +84,7 @@ namespace SG.DelayedStart {
             if ((info != null) && (!doEdit)) {
                 RunForm f = new RunForm();
                 f.StartInfo = info;
+                f.Filename = infoFile;
                 f.Show();
             } else {
                 EditForm f = new EditForm();

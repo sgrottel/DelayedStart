@@ -61,6 +61,11 @@ namespace SG.DelayedStart {
         }
 
         /// <summary>
+        /// Gets or sets the start info file name
+        /// </summary>
+        public string Filename { get; set; }
+
+        /// <summary>
         /// The progress report
         /// </summary>
         private ProgressReport progress = new ProgressReport();
@@ -202,6 +207,7 @@ namespace SG.DelayedStart {
             FormClosed -= Program.LastFormClosed;
             EditForm edit = new EditForm();
             edit.StartInfo = this.StartInfo;
+            edit.Filename = this.Filename;
             edit.Show();
             Close();
         }

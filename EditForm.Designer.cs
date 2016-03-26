@@ -54,6 +54,10 @@
             this.textBox6 = new System.Windows.Forms.TextBox();
             this.label9 = new System.Windows.Forms.Label();
             this.linkLabel1 = new System.Windows.Forms.LinkLabel();
+            this.openFileDialog1 = new System.Windows.Forms.OpenFileDialog();
+            this.saveFileDialog1 = new System.Windows.Forms.SaveFileDialog();
+            this.openFileDialog2 = new System.Windows.Forms.OpenFileDialog();
+            this.folderBrowserDialog1 = new System.Windows.Forms.FolderBrowserDialog();
             this.toolStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -95,6 +99,7 @@
             this.toolStripButton2.Name = "toolStripButton2";
             this.toolStripButton2.Size = new System.Drawing.Size(53, 22);
             this.toolStripButton2.Text = "Load";
+            this.toolStripButton2.Click += new System.EventHandler(this.toolStripButton2_Click);
             // 
             // toolStripButton3
             // 
@@ -106,19 +111,22 @@
             this.toolStripButton3.Name = "toolStripButton3";
             this.toolStripButton3.Size = new System.Drawing.Size(63, 22);
             this.toolStripButton3.Text = "Save";
+            this.toolStripButton3.ButtonClick += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveToolStripMenuItem
             // 
             this.saveToolStripMenuItem.Image = global::SG.DelayedStart.Properties.Resources.Save_6530;
             this.saveToolStripMenuItem.Name = "saveToolStripMenuItem";
-            this.saveToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.saveToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveToolStripMenuItem.Text = "Save";
+            this.saveToolStripMenuItem.Click += new System.EventHandler(this.saveToolStripMenuItem_Click);
             // 
             // saveAsToolStripMenuItem
             // 
             this.saveAsToolStripMenuItem.Name = "saveAsToolStripMenuItem";
-            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(124, 22);
+            this.saveAsToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.saveAsToolStripMenuItem.Text = "Save as ...";
+            this.saveAsToolStripMenuItem.Click += new System.EventHandler(this.saveAsToolStripMenuItem_Click);
             // 
             // toolStripSeparator2
             // 
@@ -135,19 +143,22 @@
             this.toolStripButton4.Name = "toolStripButton4";
             this.toolStripButton4.Size = new System.Drawing.Size(63, 22);
             this.toolStripButton4.Text = "Start";
+            this.toolStripButton4.ButtonClick += new System.EventHandler(this.startDelayedToolStripMenuItem_Click);
             // 
             // startDelayedToolStripMenuItem
             // 
             this.startDelayedToolStripMenuItem.Image = global::SG.DelayedStart.Properties.Resources.start;
             this.startDelayedToolStripMenuItem.Name = "startDelayedToolStripMenuItem";
-            this.startDelayedToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.startDelayedToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.startDelayedToolStripMenuItem.Text = "Start Delayed";
+            this.startDelayedToolStripMenuItem.Click += new System.EventHandler(this.startDelayedToolStripMenuItem_Click);
             // 
             // startNowToolStripMenuItem
             // 
             this.startNowToolStripMenuItem.Name = "startNowToolStripMenuItem";
-            this.startNowToolStripMenuItem.Size = new System.Drawing.Size(143, 22);
+            this.startNowToolStripMenuItem.Size = new System.Drawing.Size(152, 22);
             this.startNowToolStripMenuItem.Text = "Start Now";
+            this.startNowToolStripMenuItem.Click += new System.EventHandler(this.startNowToolStripMenuItem_Click);
             // 
             // toolStripSeparator3
             // 
@@ -183,6 +194,7 @@
             this.button1.TabIndex = 3;
             this.button1.Text = "...";
             this.button1.UseVisualStyleBackColor = true;
+            this.button1.Click += new System.EventHandler(this.button1_Click);
             // 
             // label2
             // 
@@ -223,6 +235,7 @@
             this.button2.TabIndex = 8;
             this.button2.Text = "...";
             this.button2.UseVisualStyleBackColor = true;
+            this.button2.Click += new System.EventHandler(this.button2_Click);
             // 
             // textBox2
             // 
@@ -261,6 +274,7 @@
             this.textBox4.Size = new System.Drawing.Size(50, 20);
             this.textBox4.TabIndex = 11;
             this.textBox4.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox4.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label4
             // 
@@ -296,6 +310,7 @@
             this.textBox5.Size = new System.Drawing.Size(50, 20);
             this.textBox5.TabIndex = 14;
             this.textBox5.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox5.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label7
             // 
@@ -313,6 +328,7 @@
             this.textBox6.Size = new System.Drawing.Size(50, 20);
             this.textBox6.TabIndex = 16;
             this.textBox6.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            this.textBox6.Leave += new System.EventHandler(this.textBox4_Leave);
             // 
             // label9
             // 
@@ -336,6 +352,24 @@
             this.linkLabel1.TabStop = true;
             this.linkLabel1.Text = "www.sgrottel.de";
             this.linkLabel1.LinkClicked += new System.Windows.Forms.LinkLabelLinkClickedEventHandler(this.linkLabel1_LinkClicked);
+            // 
+            // openFileDialog1
+            // 
+            this.openFileDialog1.Title = "Load DelayedStart File...";
+            // 
+            // saveFileDialog1
+            // 
+            this.saveFileDialog1.Title = "Save DelayedStart File...";
+            // 
+            // openFileDialog2
+            // 
+            this.openFileDialog2.DefaultExt = "exe";
+            this.openFileDialog2.Filter = "All Files|*.*";
+            this.openFileDialog2.Title = "DelayedStart Application...";
+            // 
+            // folderBrowserDialog1
+            // 
+            this.folderBrowserDialog1.Description = "Select Working Directory...";
             // 
             // EditForm
             // 
@@ -404,6 +438,10 @@
         private System.Windows.Forms.ToolStripSeparator toolStripSeparator3;
         private System.Windows.Forms.Label label9;
         private System.Windows.Forms.LinkLabel linkLabel1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog1;
+        private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.OpenFileDialog openFileDialog2;
+        private System.Windows.Forms.FolderBrowserDialog folderBrowserDialog1;
     }
 }
 
